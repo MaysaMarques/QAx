@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.11.4 on win32)" generated="20231205 12:43:21.800" rpa="false" schemaversion="4">
+<suite id="s1" name="Signup" source="C:\QAx\projects\walkdog-robot\tests\signup.robot">
+<test id="s1-t1" name="Deve poder cadastrar um novo dog walker" line="8">
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${dog_walker}</var>
+<arg>name = Maysa Marques</arg>
+<arg>email = maysa@gmail.com</arg>
+<arg>cpf = 49551514858</arg>
+<arg>cep = 13506650</arg>
+<arg>num=894</arg>
+<arg>complemento= kit 17</arg>
+<arg>addressStreet = Avenida 36 A</arg>
+<arg>ddressDistrict = Vila Alemã</arg>
+<arg>ddressCityUf= Rio Claro/SP</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20231205 12:43:24.043" level="INFO">${dog_walker} = {'name ': ' Maysa Marques', 'email ': ' maysa@gmail.com', 'cpf ': ' 49551514858', 'cep ': ' 13506650', 'num': '894', 'complemento': ' kit 17', 'addressStreet ': ' Avenida 36 A', 'ddressDistrict ': ' V...</msg>
+<status status="PASS" starttime="20231205 12:43:24.043" endtime="20231205 12:43:24.043"/>
+</kw>
+<kw name="Start session" library="base">
+<kw name="New Browser" library="Browser">
+<arg>browser = chromium</arg>
+<arg>headless=False</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<msg timestamp="20231205 12:43:24.043" level="FAIL">ValueError: Argument 'browser' got value 'browser = chromium' that cannot be converted to SupportedBrowsers: SupportedBrowsers does not have member 'browser = chromium'. Available: 'chromium', 'firefox' and 'webkit'</msg>
+<status status="FAIL" starttime="20231205 12:43:24.043" endtime="20231205 12:43:24.043"/>
+</kw>
+<kw name="New Page" library="Browser">
+<arg>https://walkdog.vercel.app</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="NOT RUN" starttime="20231205 12:43:24.043" endtime="20231205 12:43:24.043"/>
+</kw>
+<kw name="Wait For Elements State" library="Browser">
+<arg>css=h1&gt;&gt; text = Cuidado e diversão em cada passo</arg>
+<arg>visible</arg>
+<arg>5</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="NOT RUN" starttime="20231205 12:43:24.043" endtime="20231205 12:43:24.043"/>
+</kw>
+<status status="FAIL" starttime="20231205 12:43:24.043" endtime="20231205 12:43:24.043"/>
+</kw>
+<kw name="Go to sigup page" library="signup">
+<status status="NOT RUN" starttime="20231205 12:43:24.058" endtime="20231205 12:43:24.058"/>
+</kw>
+<kw name="Fill sigup form" library="signup">
+<arg>${dog_walker}</arg>
+<status status="NOT RUN" starttime="20231205 12:43:24.058" endtime="20231205 12:43:24.058"/>
+</kw>
+<kw name="Submit signup form" library="signup">
+<status status="NOT RUN" starttime="20231205 12:43:24.058" endtime="20231205 12:43:24.058"/>
+</kw>
+<kw name="Popup should be" library="signup">
+<arg>Recebemos o seu cadastro e em breve retornaremos o contato.</arg>
+<status status="NOT RUN" starttime="20231205 12:43:24.058" endtime="20231205 12:43:24.058"/>
+</kw>
+<kw name="Finish Session" library="base">
+<status status="NOT RUN" starttime="20231205 12:43:24.058" endtime="20231205 12:43:24.058"/>
+</kw>
+<status status="FAIL" starttime="20231205 12:43:24.043" endtime="20231205 12:43:24.058">ValueError: Argument 'browser' got value 'browser = chromium' that cannot be converted to SupportedBrowsers: SupportedBrowsers does not have member 'browser = chromium'. Available: 'chromium', 'firefox' and 'webkit'</status>
+</test>
+<doc>Suite de testes de cadastro de dog walker</doc>
+<status status="FAIL" starttime="20231205 12:43:21.800" endtime="20231205 12:43:24.089"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Signup">Signup</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
